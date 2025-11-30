@@ -124,7 +124,7 @@ class DecisionTree:
                     ratio[key] = current_click / current_count
                 sorted_categories = list(map(lambda x: x[0], sorted(ratio.items(), key=lambda x: x[1])))
                 categories_map = dict(zip(sorted_categories, list(range(len(sorted_categories)))))
-
+                
                 feature_vector = np.array(list(map(lambda x: categories_map[x], sub_X[:, feature])))
             else:
                 raise ValueError
